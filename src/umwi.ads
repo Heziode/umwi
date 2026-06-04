@@ -405,13 +405,13 @@ private
 
    type Cluster_Cursor is record
       Has_Cur : Boolean          := False;
-      Cur     : Grapheme_Cluster := (Positive'First, Positive'First, Positive'First, Natural'First);
+      Cur     : Grapheme_Cluster := (1, 1, 1, 0);
    end record;
 
    type UTF8_Cluster_Cursor is record
       Has_Cur    : Boolean               := False;
-      Cur        : UTF8_Grapheme_Cluster := (Positive'First, Positive'First, Positive'First, Natural'First);
-      Last_Point : Natural               := Natural'First;
+      Cur        : UTF8_Grapheme_Cluster := (1, 1, 1, 0);
+      Last_Point : Natural               := 0;
       --  Code-point index in the decoded buffer of the last point covered
       --  by Cur; used to advance to the next cluster in O(1).
    end record;
